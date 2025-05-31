@@ -12,10 +12,18 @@ To create a new virtual environment, you can use the following command:
 
 ```powershell
 # For Windows PowerShells
-
-python –-version
+python --version
 
 pip install virtualenv
+python.exe -m pip install --upgrade pip
 
 python -m venv .venv
+.\.venv\Scripts\activate
+python.exe -m pip install --upgrade pip
+
+pip install LangChain
+ 
+pip install langchain-community
+ 
+pip install langchain_experimental
 ```
