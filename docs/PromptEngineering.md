@@ -4,12 +4,13 @@ This document outlines various prompt engineering techniques and patterns that c
 
 ## Prompt Patterns
 
-What are prompt patterns?
-Prompt patterns are structured approaches to designing prompts that can enhance the model's understanding and response quality. They help in creating effective prompts by leveraging specific techniques or strategies.
+sPrompt patterns are structured approaches to designing prompts that can enhance the model's understanding and response quality. They help in creating effective prompts by leveraging specific techniques or strategies.
 
 1. **Few-shot prompting**: Providing a few examples in the prompt to guide the model's responses.
 2. **Chain-of-thought prompting**: Encouraging the model to think through a problem step-by-step.
 3. **Contextual prompting**: Including relevant context or background information in the prompt to improve understanding.
+4. **Zero-shot prompting**: Asking the model to perform a task without providing any examples, relying on its general knowledge.
+5. **Role-based prompting**: Assigning a specific role or perspective to the model to shape its responses.
 
 ## Prompt techniques
 
