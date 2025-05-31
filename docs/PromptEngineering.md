@@ -199,6 +199,140 @@ Review Text: "Great sound quality and comfortable fit. Battery life could be bet
 Analysis:
 ```
 
+### 7. ReAct (Reasoning and Acting) Prompting
+
+**Definition:** A powerful pattern that combines reasoning and action-taking in an iterative loop, allowing the model to think through problems, take actions, observe results, and adjust its approach.
+
+**When to Use:**
+
+- Complex problem-solving requiring multiple steps
+- Tasks requiring research or information gathering
+- Decision-making processes with uncertain outcomes
+- Dynamic situations where initial assumptions might be wrong
+
+**Structure:**
+
+1. **Thought:** Reasoning about the current situation
+2. **Action:** Taking a specific action based on reasoning
+3. **Observation:** Analyzing the results of the action
+4. **Repeat:** Continue the cycle until the goal is achieved
+
+**Example:**
+
+```text
+You are a research assistant helping someone plan a vacation. Use the ReAct pattern to help them find the best destination.
+
+User Query: "I want to go somewhere warm in March with good food and cultural sites, budget around $2000 for one week."
+
+Thought: I need to identify warm destinations in March, then research food scenes and cultural attractions within their budget.
+
+Action: Let me first identify warm destinations in March - this would include places like Southeast Asia, parts of South America, the Middle East, and some Mediterranean locations.
+
+Observation: March is good for Thailand, Vietnam, Egypt, Morocco, and parts of Mexico and Central America.
+
+Thought: Now I need to narrow this down based on food and cultural sites. Thailand and Vietnam are known for excellent food scenes, Egypt and Morocco have rich cultural heritage.
+
+Action: Let me analyze the budget for each option for a one-week trip including flights, accommodation, food, and activities.
+
+Observation: 
+- Thailand: $1,800-2,200 (good fit)
+- Vietnam: $1,500-1,900 (excellent fit)
+- Morocco: $1,600-2,100 (good fit)
+- Egypt: $1,700-2,200 (good fit)
+
+Thought: All options fit the budget. I should now consider which offers the best combination of food and cultural experiences.
+
+Action: Recommend Vietnam as the top choice because it offers exceptional street food culture, UNESCO World Heritage sites, diverse cultural experiences, and comes in under budget, leaving room for upgrades or unexpected expenses.
+
+Final Recommendation: Vietnam would be perfect for your March trip...
+```
+
+**Best Practices:**
+
+- Make reasoning explicit and logical
+- Clearly separate thoughts, actions, and observations
+- Allow for course correction based on new information
+- Use the pattern for genuinely complex, multi-step problems
+
+### 8. Reasoning Chain Prompting
+
+**Definition:** Advanced reasoning techniques that guide the model through sophisticated logical processes and problem-solving approaches.
+
+**When to Use:**
+
+- Complex analytical tasks
+- Multi-variable problems
+- Abstract reasoning challenges
+- Decision-making with multiple criteria
+
+**Reasoning Techniques:**
+
+#### Deductive Reasoning
+
+```text
+Use deductive reasoning to solve this problem:
+
+Premise 1: All software engineers at this company use version control
+Premise 2: Sarah is a software engineer at this company
+Premise 3: Sarah works on collaborative projects
+
+Question: Does Sarah use version control?
+
+Deductive Analysis:
+Major premise: All software engineers at this company use version control
+Minor premise: Sarah is a software engineer at this company
+Conclusion: Therefore, Sarah uses version control
+
+This conclusion is logically certain given the premises.
+```
+
+#### Inductive Reasoning
+
+```text
+Use inductive reasoning to make a prediction:
+
+Observations:
+- Website A implemented chatbot: 30% increase in customer satisfaction
+- Website B implemented chatbot: 25% increase in customer satisfaction  
+- Website C implemented chatbot: 35% increase in customer satisfaction
+- Website D implemented chatbot: 28% increase in customer satisfaction
+
+Inductive Analysis:
+Pattern: All observed websites show significant customer satisfaction increases after chatbot implementation
+Generalization: Implementing chatbots likely increases customer satisfaction
+Prediction: Website E will probably see a 25-35% increase in customer satisfaction if they implement a chatbot
+
+Note: This is a probable conclusion based on patterns, not certainty.
+```
+
+#### Abductive Reasoning
+
+```text
+Use abductive reasoning to find the best explanation:
+
+Observation: The company's quarterly revenue dropped 15% despite launching two new products
+
+Possible Explanations:
+1. Market conditions deteriorated
+2. Competitor launched superior products
+3. Internal operational issues
+4. Pricing strategy was wrong
+5. Marketing campaign was ineffective
+
+Abductive Analysis:
+Most likely explanation: Competitor launched superior products
+Why: New product launches typically increase revenue unless external factors intervene. A competitor's superior offering would directly explain both the revenue drop and why new products didn't help.
+
+Best hypothesis to investigate: Research competitor activities during this quarter.
+```
+
+**Best Practices:**
+
+- Clearly identify the type of reasoning being used
+- Show all logical steps
+- Acknowledge limitations and assumptions
+- Consider alternative explanations
+
 ## Prompt Techniques
 
 Prompt techniques are specific methods for crafting and refining prompts to achieve better results. They focus on how you communicate with the AI model.
