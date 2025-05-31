@@ -333,16 +333,157 @@ Final Recommendation: Vietnam would be perfect for your March trip - warm weathe
 - Ensure each action logically follows from the preceding thought
 - Include enough detail in observations to inform the next thought
 
-### 9. Reasoning Chain Prompting
+### 9. Iterative Prompting
 
-**Definition:** Advanced reasoning techniques that guide the model through sophisticated logical processes and problem-solving approaches.
+**Definition:** A systematic pattern for refining prompts through multiple rounds based on previous outputs to achieve better results. This involves structured testing and improvement cycles.
 
 **When to Use:**
 
-- Complex analytical tasks
-- Multi-variable problems
+- When initial prompts don't produce satisfactory results
+- For complex tasks requiring refinement
+- When developing reusable prompt templates
+- For optimizing prompt performance across different scenarios
+- When you need to document what works for future use
+
+**Process:**
+
+1. Start with a basic prompt
+2. Analyze the output quality and identify specific issues
+3. Identify specific improvement areas (clarity, specificity, examples, etc.)
+4. Refine the prompt accordingly
+5. Test and repeat until satisfactory results
+6. Document what works for future use
+
+**Example:**
+
+```text
+Iteration 1: "Explain machine learning"
+Result: Too general, lacks focus, assumes technical knowledge
+
+Iteration 2: "Explain machine learning for beginners"
+Result: Better audience targeting, but still too broad and abstract
+
+Iteration 3: "Explain what machine learning is and provide 2 simple, real-world examples that a complete beginner would understand. Use analogies and avoid technical jargon."
+Result: Much better - specific, targeted, with clear requirements and constraints
+
+Iteration 4: "Explain what machine learning is in simple terms. Provide 2 real-world examples (like Netflix recommendations or email spam filters) that a complete beginner would understand. Use analogies to everyday experiences and avoid technical jargon. Keep the explanation under 200 words."
+Result: Excellent - precise, constrained, with specific examples and length limit
+```
+
+**Best Practices:**
+
+- Document each iteration and the reasoning for changes
+- Test with multiple different inputs, not just one example
+- Focus on one improvement area at a time
+- Keep track of what works and what doesn't
+- Set clear success criteria before starting
+- Use A/B testing when possible to compare versions
+
+### 10. Conditional Prompting
+
+**Definition:** A pattern that uses if-then logic and conditional statements to handle different scenarios within a single prompt, allowing the model to respond appropriately based on varying conditions.
+
+**When to Use:**
+
+- When input types can vary significantly
+- For customer service scenarios with different inquiry types
+- When you need different response styles for different conditions
+- For creating versatile, reusable prompts
+- When handling multiple scenarios in a single prompt
+
+**Structure:**
+
+```text
+If [condition], then [response type]
+If [different condition], then [different response type]
+```
+
+**Example:**
+
+```text
+You are a customer service representative. Respond to customer inquiries based on these guidelines:
+
+If the customer is asking about a refund:
+- Express empathy
+- Explain the refund policy clearly
+- Offer specific next steps
+
+If the customer is making a complaint:
+- Acknowledge their frustration
+- Ask clarifying questions
+- Propose solutions
+
+If the customer is asking for product information:
+- Provide detailed, accurate information
+- Suggest related products if appropriate
+- Ask if they need additional help
+
+Customer inquiry: "I ordered a product two weeks ago and it still hasn't arrived. I want my money back!"
+
+Response:
+```
+
+**Best Practices:**
+
+- Clearly define all possible conditions
+- Ensure conditions are mutually exclusive when possible
+- Provide specific instructions for each condition
+- Test with various input types to ensure proper condition matching
+- Order conditions from most specific to most general
+
+### 11. Multi-Turn Prompting
+
+**Definition:** A pattern for designing conversations that build context and complexity across multiple exchanges, maintaining coherent dialogue flow and progressive information gathering.
+
+**When to Use:**
+
+- Complex consultations requiring multiple exchanges
+- Information gathering that builds progressively
+- Coaching or advisory scenarios
+- Problem-solving that requires iterative refinement
+- Building rapport and understanding over time
+
+**Structure:**
+
+1. **Opening:** Establish context and goals
+2. **Development:** Build on previous exchanges
+3. **Deepening:** Ask follow-up questions and explore details
+4. **Resolution:** Work toward conclusion or next steps
+
+**Example:**
+
+```text
+Turn 1: "I'm planning to start a small business. Can you help me think through some initial considerations?"
+
+Turn 2: "Based on my interest in sustainable products and my background in environmental science, what type of business might be a good fit?"
+
+Turn 3: "I like the idea of eco-friendly consulting. What would be the key steps to validate this business idea before investing time and money?"
+
+Turn 4: "How should I approach potential customers to test interest in sustainability consulting before I invest in formal business setup?"
+
+[Each turn builds on the previous conversation while adding new information and moving toward actionable steps]
+```
+
+**Best Practices:**
+
+- Plan the conversation flow and objectives
+- Reference previous exchanges to maintain continuity
+- Build toward a specific goal or outcome
+- Maintain context consistency throughout
+- Ask progressively deeper questions
+- Summarize key points when transitioning between topics
+
+### 12. Reasoning Chain Prompting
+
+**Definition:** Advanced reasoning patterns that guide the model through sophisticated logical processes and problem-solving approaches using formal reasoning methods.
+
+**When to Use:**
+
+- Complex analytical tasks requiring formal logic
+- Multi-variable problems with interdependencies
 - Abstract reasoning challenges
 - Decision-making with multiple criteria
+- Academic or research contexts requiring rigorous reasoning
 
 **Reasoning Techniques:**
 
@@ -510,173 +651,211 @@ Theme: The power of stories to connect across worlds
 Feel free to be imaginative with the magical elements, but keep the story grounded in recognizable emotions.
 ```
 
-### 5. Iterative Prompting
+### 5. Precision Prompting
 
-**Definition:** Refining prompts through multiple rounds based on previous outputs to achieve better results. This is a systematic approach to prompt improvement through testing and refinement.
+**Definition:** A technique focused on eliminating ambiguity and maximizing specificity in prompt construction to achieve exact desired outputs.
 
-**Process:**
+**Implementation Strategies:**
 
-1. Start with a basic prompt
-2. Analyze the output quality and identify specific issues
-3. Identify specific improvement areas (clarity, specificity, examples, etc.)
-4. Refine the prompt accordingly
-5. Test and repeat until satisfactory results
-6. Document what works for future use
-
-**Example Iteration:**
-
-```text
-Iteration 1: "Explain machine learning"
-Result: Too general, lacks focus, assumes technical knowledge
-
-Iteration 2: "Explain machine learning for beginners"
-Result: Better audience targeting, but still too broad and abstract
-
-Iteration 3: "Explain what machine learning is and provide 2 simple, real-world examples that a complete beginner would understand. Use analogies and avoid technical jargon."
-Result: Much better - specific, targeted, with clear requirements and constraints
-
-Iteration 4: "Explain what machine learning is in simple terms. Provide 2 real-world examples (like Netflix recommendations or email spam filters) that a complete beginner would understand. Use analogies to everyday experiences and avoid technical jargon. Keep the explanation under 200 words."
-Result: Excellent - precise, constrained, with specific examples and length limit
-```
-
-**Best Practices:**
-
-- Document each iteration and the reasoning for changes
-- Test with multiple different inputs, not just one example
-- Focus on one improvement area at a time
-- Keep track of what works and what doesn't
-- Set clear success criteria before starting
-- Use A/B testing when possible to compare versions
-
-### 6. Conditional Prompting
-
-**Definition:** Using if-then logic and conditional statements to handle different scenarios within a single prompt.
-
-**Structure:**
-
-```text
-If [condition], then [response type]
-If [different condition], then [different response type]
-```
+- Use precise, unambiguous language
+- Define specific output requirements
+- Eliminate subjective terms
+- Provide exact specifications
 
 **Example:**
 
 ```text
-You are a customer service representative. Respond to customer inquiries based on these guidelines:
+Instead of: "Write a good product description"
 
-If the customer is asking about a refund:
-- Express empathy
-- Explain the refund policy clearly
-- Offer specific next steps
-
-If the customer is making a complaint:
-- Acknowledge their frustration
-- Ask clarifying questions
-- Propose solutions
-
-If the customer is asking for product information:
-- Provide detailed, accurate information
-- Suggest related products if appropriate
-- Ask if they need additional help
-
-Customer inquiry: "I ordered a product two weeks ago and it still hasn't arrived. I want my money back!"
-
-Response:
+Use: "Write a 75-word product description for wireless noise-canceling headphones targeting remote workers. Include: battery life, noise reduction level, comfort features, and price point. Use professional but accessible tone. End with a clear purchase call-to-action."
 ```
 
-### 7. Feedback-Based Prompting
+### 6. Scaffolding Prompting
 
-**Definition:** Incorporating feedback mechanisms to improve prompt performance over time.
+**Definition:** A technique that provides structured support and guidance to help the model approach complex tasks systematically, like building intellectual scaffolding.
 
 **Implementation:**
 
-- Track response quality metrics
-- Collect user feedback
-- Analyze common failure patterns
-- Adjust prompts based on insights
-
-**Example Feedback Loop:**
-
-```text
-Original Prompt: "Write a product description"
-Feedback: Descriptions are too generic
-
-Improved Prompt: "Write a compelling product description that highlights 3 unique benefits and includes emotional appeal for the target audience"
-Feedback: Better, but need more specificity
-
-Final Prompt: "Write a 100-150 word product description for [PRODUCT] targeting [AUDIENCE]. Include: 1) One unique functional benefit, 2) One emotional benefit, 3) Social proof element, 4) Clear call-to-action. Use persuasive but honest language."
-```
-
-### 8. Multi-Turn Prompting
-
-**Definition:** Designing conversations that build context and complexity across multiple exchanges.
-
-**Strategies:**
-
-- Plan the conversation flow
-- Reference previous exchanges
-- Build toward a specific goal
-- Maintain context consistency
+- Break complex tasks into manageable steps
+- Provide frameworks and structures
+- Offer guiding questions
+- Create progressive difficulty levels
 
 **Example:**
 
 ```text
-Turn 1: "I'm planning to start a small business. Can you help me think through some initial considerations?"
+Let's analyze this business case study step by step. I'll provide a framework to guide your analysis:
 
-Turn 2: "Based on my interest in sustainable products and my background in environmental science, what type of business might be a good fit?"
+1. First, identify the key stakeholders (who is affected?)
+2. Next, define the main problem (what needs to be solved?)
+3. Then, list the constraints (what limitations exist?)
+4. Finally, propose 3 potential solutions with pros/cons for each
 
-Turn 3: "I like the idea of eco-friendly consulting. What would be the key steps to validate this business idea before investing time and money?"
+Case Study: [Insert case details here]
 
-[Each turn builds on the previous conversation while adding new information]
+Start with step 1 - who are the key stakeholders in this situation?
 ```
 
-### 9. Contextual Embedding
+### 7. Layered Prompting
 
-**Definition:** Seamlessly integrating relevant context, background information, and constraints throughout the prompt.
+**Definition:** A technique that builds complexity gradually by layering information, instructions, or requirements in a structured sequence.
+
+**Implementation:**
+
+- Start with basic context
+- Add specific requirements in layers
+- Build complexity progressively
+- Ensure each layer is clear before adding the next
+
+**Example:**
+
+```text
+Layer 1 (Context): You are a financial advisor meeting with a young professional.
+
+Layer 2 (Situation): They are 25 years old, earn $60,000/year, have $2,000 in savings, and $25,000 in student loans.
+
+Layer 3 (Goal): They want to buy a house in 5 years and need a comprehensive financial plan.
+
+Layer 4 (Requirements): Provide specific monthly budget recommendations, savings targets, and debt payoff strategy with exact timelines.
+
+Layer 5 (Format): Present as a step-by-step action plan with monthly dollar amounts and milestone dates.
+```
+
+### 8. Anchoring Prompting
+
+**Definition:** A technique that establishes reference points or "anchors" to guide the model's response within desired parameters.
+
+**Implementation:**
+
+- Provide reference examples or standards
+- Set quality benchmarks
+- Establish tone or style anchors
+- Use comparison points
+
+**Example:**
+
+```text
+Write a product review in the style and quality of these reference examples:
+
+Anchor Example 1: "The Dyson V15 delivers exceptional cleaning power with its laser dust detection. While the 60-minute battery life suffices for most homes, the premium price point may deter budget-conscious buyers. Overall: impressive performance with minor drawbacks."
+
+Anchor Example 2: "Samsung's Galaxy S23 excels in photography and processing speed. The refined design feels premium, though battery life remains average. Best suited for photography enthusiasts willing to pay flagship prices."
+
+Now write a similar review for: [Product Name]
+Maintain the same analytical depth, balanced perspective, and concise format as the anchors.
+```
+
+### 9. Metacognitive Prompting
+
+**Definition:** A technique that encourages the model to think about its own thinking process, making reasoning explicit and improving response quality through self-reflection.
+
+**Implementation:**
+
+- Ask the model to explain its reasoning
+- Request self-evaluation of responses
+- Encourage thinking about alternative approaches
+- Prompt for uncertainty acknowledgment
+
+**Example:**
+
+```text
+Solve this logic puzzle, but I want you to think out loud about your thinking process:
+
+Puzzle: Three friends - Alex, Blake, and Casey - each like different sports (soccer, tennis, basketball) and different colors (red, blue, green). 
+- Alex doesn't like soccer or red
+- Blake likes blue
+- The person who likes tennis also likes green
+- Casey doesn't like basketball
+
+Before you solve it, tell me:
+1. What's your strategy for approaching this puzzle?
+2. What type of reasoning will you use?
+3. How will you organize the information?
+
+Then solve it step by step, explaining your thought process at each stage.
+```
+
+### 10. Comparative Prompting
+
+**Definition:** A technique that uses comparisons, contrasts, or relative assessments to guide the model toward more nuanced and balanced responses.
+
+**Implementation:**
+
+- Request comparisons between options
+- Ask for pros and cons analysis
+- Use "better than" or "worse than" frameworks
+- Encourage relative assessments
+
+**Example:**
+
+```text
+Compare these three project management methodologies and help me choose the best one for my team:
+
+Context: 8-person software development team, mixed experience levels, tight deadline, client wants frequent updates
+
+Methodologies to compare:
+1. Agile Scrum
+2. Waterfall
+3. Kanban
+
+For each methodology, assess:
+- Suitability for our team size and experience
+- How well it handles tight deadlines
+- Effectiveness for client communication
+- Learning curve for team members
+
+Then rank them 1-3 for our specific situation with clear reasoning for your recommendation.
+```
+
+### 11. Contextual Embedding
+
+**Definition:** A technique for seamlessly integrating relevant context, background information, and constraints throughout the prompt to create rich, nuanced responses.
 
 **Elements to Embed:**
 
-- User expertise level
-- Specific industry knowledge
-- Cultural considerations
-- Time constraints
-- Resource limitations
+- User expertise level and background
+- Specific industry or domain knowledge
+- Cultural and social considerations
+- Time constraints and deadlines
+- Resource limitations and available tools
+- Organizational context and culture
 
 **Example:**
 
 ```text
-Context Integration:
+Context Integration Example:
 You're advising a first-time manager (2 weeks in role) at a tech startup (50 employees) who needs to give performance feedback to a team member (software developer, 3 years experience) who has been missing deadlines but produces high-quality work when they deliver.
 
-The manager wants to address the issue constructively while maintaining team morale. The company culture values direct communication but also psychological safety.
+Additional Context: The manager wants to address the issue constructively while maintaining team morale. The company culture values direct communication but also psychological safety. The upcoming project deadline is in 3 weeks, and this developer's contribution is critical.
 
-Question: How should they approach this conversation?
+Question: How should they approach this conversation, considering all these contextual factors?
 ```
 
-### 10. Constraint-Based Prompting
+### 12. Constraint-Based Prompting
 
-**Definition:** Using specific limitations to focus and direct the model's responses.
+**Definition:** A technique that uses specific limitations and boundaries to focus and direct the model's responses toward desired outcomes.
 
 **Types of Constraints:**
 
-- Length (word count, character limits)
-- Format (lists, paragraphs, JSON, tables)
-- Style (formal, casual, technical, conversational)
-- Content (family-friendly, professional, specific topics)
-- Audience (age group, expertise level, cultural background)
+- **Length Constraints:** Word count, character limits, time limits
+- **Format Constraints:** Lists, paragraphs, JSON, tables, specific structures
+- **Style Constraints:** Formal, casual, technical, conversational, academic
+- **Content Constraints:** Family-friendly, professional, specific topics, avoid certain terms
+- **Audience Constraints:** Age group, expertise level, cultural background, role
 
 **Example:**
 
 ```text
-Write a technical explanation of blockchain technology with these constraints:
+Write a technical explanation of blockchain technology with these specific constraints:
 
-Length: Exactly 150 words
-Audience: Business professionals with no technical background
-Format: 3 paragraphs (intro, explanation, business relevance)
-Style: Professional but accessible
-Avoid: Technical jargon, complex metaphors
-Include: At least one concrete business example
-Tone: Confident and informative
+Length: Exactly 150 words (not 149, not 151)
+Audience: Business executives with no technical background
+Format: Exactly 3 paragraphs (intro, explanation, business relevance)
+Style: Professional but accessible, confident tone
+Avoid: All technical jargon, complex metaphors, programming terms
+Include: At least one concrete business example from finance or supply chain
+Vocabulary: Use only common business terminology
+Call-to-action: End with a question that encourages further exploration
 ```
 
 ## Best Practices
@@ -702,12 +881,13 @@ Tone: Confident and informative
 - Maintain consistent formatting
 - Use 3-5 examples for few-shot prompting
 
-### 4. Iterative Improvement
+### 4. Systematic Testing and Refinement
 
 - Test prompts with different inputs
 - Analyze failure modes
 - Refine based on results
 - Document what works well
+- Use iterative prompting patterns for complex optimization
 
 ### 5. Format Specification
 
