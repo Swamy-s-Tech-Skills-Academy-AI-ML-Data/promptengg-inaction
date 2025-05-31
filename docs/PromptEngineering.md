@@ -57,9 +57,42 @@ Sentiment:
 - Test with various inputs to ensure consistency
 - Consider few-shot prompting if results are inconsistent
 
-### 2. Few-Shot Prompting
+### 2. One-Shot Prompting
 
-**Definition:** Providing a small number of examples (typically 1-5) to demonstrate the desired input-output pattern before asking the model to perform the task.
+**Definition:** Providing exactly one example to demonstrate the desired input-output pattern before asking the model to perform the task. This is a specific case of few-shot prompting with minimal demonstration.
+
+**When to Use:**
+
+- When you need to show the exact format or style desired
+- Tasks where one good example clarifies the requirements
+- When zero-shot performance is inconsistent but you want minimal overhead
+- Simple pattern recognition tasks
+- When you want to establish tone or style with minimal examples
+
+**Example:**
+
+```text
+Convert the following business jargon into plain English:
+
+Business Jargon: "We need to leverage our core competencies to maximize synergistic opportunities."
+Plain English: "We should use our main strengths to find ways our teams can work better together."
+
+Business Jargon: "Let's circle back offline to ideate some actionable deliverables."
+Plain English:
+```
+
+**Best Practices:**
+
+- Choose your single example very carefully - it sets the entire pattern
+- Make sure the example clearly demonstrates the desired transformation or format
+- Use a representative example that covers the complexity you expect
+- Ensure the example is high-quality and error-free
+- Consider the example as a template the model will follow closely
+- Test with different single examples to see which works best for your use case
+
+### 3. Few-Shot Prompting
+
+**Definition:** Providing a small number of examples (typically 2-5) to demonstrate the desired input-output pattern before asking the model to perform the task.
 
 **When to Use:**
 
@@ -96,7 +129,7 @@ French:
 - Order examples from simple to complex when possible
 - Include edge cases or challenging examples when relevant
 
-### 3. Chain-of-Thought (CoT) Prompting
+### 4. Chain-of-Thought (CoT) Prompting
 
 **Definition:** Encouraging the model to break down complex problems into step-by-step reasoning processes, showing the intermediate reasoning steps that lead to the final answer.
 
@@ -140,7 +173,7 @@ Therefore, the customer will pay $67.20.
 - Ask for verification of each step
 - Use numbered steps for clarity
 
-### 4. Contextual Prompting
+### 5. Contextual Prompting
 
 **Definition:** Providing relevant background information, context, or constraints to help the model understand the situation better.
 
@@ -166,7 +199,7 @@ Please provide practical, actionable advice considering their specific situation
 - Be specific about constraints and parameters
 - Clearly separate context from the actual request
 
-### 5. Role-Based Prompting
+### 6. Role-Based Prompting
 
 **Definition:** Assigning a specific role, persona, or expertise level to the model to shape its perspective and response style.
 
@@ -192,7 +225,7 @@ Provide practical, implementable advice that considers the resource constraints 
 - Include relevant experience or credentials
 - Match the role to the complexity of the task
 
-### 6. Template Prompting
+### 7. Template Prompting
 
 **Definition:** Using structured templates with placeholders that can be filled with specific information for consistent results across multiple similar tasks.
 
@@ -241,7 +274,7 @@ Analysis:
 - Document any special instructions for filling placeholders
 - Make templates reusable across different contexts
 
-### 7. ReAct (Reasoning and Acting) Prompting
+### 8. ReAct (Reasoning and Acting) Prompting
 
 **Definition:** A powerful pattern that combines reasoning and action-taking in an iterative loop, allowing the model to think through problems, take actions, observe results, and adjust its approach. ReAct alternates between reasoning steps (thoughts) and actions until a solution is reached.
 
@@ -300,7 +333,7 @@ Final Recommendation: Vietnam would be perfect for your March trip - warm weathe
 - Ensure each action logically follows from the preceding thought
 - Include enough detail in observations to inform the next thought
 
-### 8. Reasoning Chain Prompting
+### 9. Reasoning Chain Prompting
 
 **Definition:** Advanced reasoning techniques that guide the model through sophisticated logical processes and problem-solving approaches.
 
