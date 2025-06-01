@@ -22,8 +22,7 @@ python -m venv .venv
 python.exe -m pip install --upgrade pip
 
 pip install LangChain
- 
+pip install langchain-openai
 pip install langchain-community
- 
 pip install langchain_experimental
 ```
